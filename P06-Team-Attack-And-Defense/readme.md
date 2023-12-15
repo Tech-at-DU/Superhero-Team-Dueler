@@ -58,7 +58,7 @@ You will do this one on your own. Create a method to act as a setter for `self.d
 
 Add the `add_death` method to the Hero class:
 
-**HINT:** Remember self.deaths is a Int!
+**HINT:** Remember self.deaths is an Int!
 
 ```python
 def add_death(self, num_deaths):

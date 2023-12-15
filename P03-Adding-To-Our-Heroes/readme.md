@@ -4,28 +4,29 @@ In this chapter we are going to add the classes we built for Armor and Abilities
 
 - Some classes we will give you the code to use. Be sure to read through it and reference the comments so that you know what it is doing. This is important because...
 - Other classes we will _NOT_ give you the code, and will only give you a docstring that describes what the code is supposed to do. Use this as a template and replace `pass` with your own code.
-    - Use your prior learnings and the code we gave you to help build out the code needed for these classes
+  - Use your prior learnings and the code we gave you to help build out the code needed for these classes
 
 Here is an overview of what you built in the previous chapter:
 
-* Ability Class
+- Ability Class
+
   1. `__init__`: Parameters: name: String, max_damage: Integer
   2. `attack`: No Parameters
 
-* Armor Class
+- Armor Class
   1. `__init__`: Parameters: name: String, max_block: Integer
   2. `block`: Parameters: None
 
 Now, we are going to expand our Hero class so that it is able to use the armor and abilities classes to make our heroes stronger! To do so, we will adjust the hero class to have the following design:
 
-* Hero Class
+- Hero Class
   1. `__init__`: Parameters: name:String, starting_health:Int (default value: 100)
   2. `add_ability`: Parameters: ability:Ability Object
-  3. `attack`:  No Parameters
+  3. `attack`: No Parameters
   4. `defend`: incoming_damage: Integer
   5. `take_damage`: Parameters: damage
   6. `is_alive`: No Parameters
-  7. `fight`: Parameters: opponent: Hero Class  
+  7. `fight`: Parameters: opponent: Hero Class
 
 # Build out the Hero Class
 
@@ -113,7 +114,7 @@ You should see output similar to the following:
 
 This output may look confusing at first, but let's break it down.
 
-Python uses brackets `[]` to denote a list. Our output is showing us that `hero.abilities` is a list with a single item. This item is an object with the class name Ability.
+Python uses brackets [] to denote a list. Our output is showing us that hero.abilities is a list with a single item. This item is an object with the class name Ability.
 
 Try adding a second ability and see how it looks when you print it to the terminal.
 
@@ -127,7 +128,7 @@ This method should iterate over our `abilities` list and call the `attack()` met
 
 It's easiest to use a Python `for` loop to iterate over the list of abilities.
 
-The `for` loop will return each object in the list, and you can call methods on those objects just like you would expect.  
+The `for` loop will return each object in the list, and you can call methods on those objects just like you would expect.
 
 The code snippet below shows how you might iterate over a list of dogs and call the method `bark()` on each of them.
 
@@ -186,7 +187,7 @@ if __name__ == "__main__":
     print(hero.attack())
 ```
 
-You should see a value between 0 and 140 in the terminal. Remember to run this code a few times and look for a range of values that fits with the values you are expecting! 
+You should see a value between 0 and 140 in the terminal. Remember to run this code a few times and look for a range of values that fits with the values you are expecting!
 
 # Add Armor
 
@@ -226,11 +227,11 @@ def defend(self):
   # TODO: This method should run the block method on each armor in self.armors
 ```
 
-**Add some armor** Add some armor to your test hero. Create two instances of the armore class. Add these to your hero. Then call the defend method and print the results. Be sure to test this a couple times to make sure it's working correctly. 
+**Add some armor** Add some armor to your test hero. Create two instances of the armore class. Add these to your hero. Then call the defend method and print the results. Be sure to test this a couple times to make sure it's working correctly.
 
 # Take Damage
 
-When a hero takes damage, their `self.current_health` should be decreased. While you can change a property directly, it's common practice to use a method to change this value instead. This is called a **setter** in software design. The job of a setter is to be in charge of updating the value of a specific property.  This allows for value verification and additional housekeeping that may be required every time the value is changed. This system offers the advantage of allowing your software to react to the changes of specific properties. For example, a hero might take less damage if they have a force field, or they might say "Ouch!" If they take little or no damage from an attack they might say "You'll have to try hard than that!" They might fall over over if they run out of health.
+When a hero takes damage, their `self.current_health` should be decreased. While you can change a property directly, it's common practice to use a method to change this value instead. This is called a **setter** in software design. The job of a setter is to be in charge of updating the value of a specific property. This allows for value verification and additional housekeeping that may be required every time the value is changed. This system offers the advantage of allowing your software to react to the changes of specific properties. For example, a hero might take less damage if they have a force field, or they might say "Ouch!" If they take little or no damage from an attack they might say "You'll have to try hard than that!" They might fall over over if they run out of health.
 
 In our case we want to call the defend method and change our hero's health based on the number and type of armors that our hero has.
 
@@ -240,9 +241,9 @@ Before we update `self.current_health` we need to call `self.defend` with the am
 
 Let's walk through an example to make it clear:
 
-  - `take_damage` receives 50 damage units coming in.
-  - Calling `self.defend(50)` returns 10.
-  - 40 points should be subtracted from `self.current_health`.
+- `take_damage` receives 50 damage units coming in.
+- Calling `self.defend(50)` returns 10.
+- 40 points should be subtracted from `self.current_health`.
 
 Build the `take_damage` method for the Hero class:
 
@@ -257,7 +258,6 @@ def take_damage(self, damage):
 ```
 
 Now time to test again!
-
 
 Test your method by calling it using these values:
 
@@ -277,7 +277,7 @@ When calling your code with these values you should have a `current_health` betw
 
 **Stretch challenge:** Think about the math here...🤔 If a hero takes 50 points but their defenses only come up with high numbers, remember the values generated are random, it's possible for a damage to add points to `current_helth`!
 
-For example: 
+For example:
 
 - Our example hero has a current health of 200
 - Imagine they have armor with a value of 70
@@ -286,7 +286,7 @@ For example:
 - Calculate the damage as 50 - 62 = -12
 - Now subtract the damage from current health and we get 200 - -12 = 212 (remember if you subtract a negative number you're adding)
 
-The stretch goal here is to handle this situation. The easy solution is to ignore damage when it is less than 0. But you might think of other solutions. 
+The stretch goal here is to handle this situation. The easy solution is to ignore damage when it is less than 0. But you might think of other solutions.
 
 # Are You still conscious?
 
@@ -301,7 +301,7 @@ Write the `is_alive` method for the Hero Class on your own:
 **HINT:** Follow the `TODO` instructions for guidance.
 
 ```python
-def is_alive(self):  
+def is_alive(self):
   '''Return True or False depending on whether the hero is alive or not.
   '''
   # TODO: Check the current_health of the hero.
@@ -344,7 +344,7 @@ Keep the following in mind when building this method:
 - Because we don't know how many times our hero will need to attack -- it's best to use a `while` loop to continue the attack until someone dies.
 - You'll need to use the methods that we just built to complete this.
 - _This function will need to take into account the possibility that both heroes may not have abilities and therefore will do no damage._
-    - Use an `if` statement and check to see that at least one hero has an ability. If no abilities exist print out "Draw"
+  - Use an `if` statement and check to see that at least one hero has an ability. If no abilities exist print out "Draw"
 - When a hero wins, print the following, replacing "HeroName" with the actual name of the hero who won the fight:
 
 ```
@@ -356,7 +356,7 @@ The core functionality for this method will come from calling methods that exist
 Build the `fight` method for the Hero class! Remove the current implemenation and take everything you've learned so far in this chapter and apply it to re-writing this method!
 
 ```python
-def fight(self, opponent):  
+def fight(self, opponent):
   ''' Current Hero will take turns fighting the opponent hero passed in.
   '''
   # TODO: Fight each hero until a victor emerges.
@@ -399,11 +399,11 @@ Wonder Woman won!
 
 This is because the values of Wonder Woman's attack are much greater than Dumbledore's. Try changing the values and see what happens.
 
-**Stretch goal:** a lot depends on who attacks when! If one hero attacks first and defeats the other the other may never get a chance to attack. 
+**Stretch goal:** a lot depends on who attacks when! If one hero attacks first and defeats the other the other may never get a chance to attack.
 
-The same is true for the order of checking for a defeated hero. If we check the opponent first, we may have been defeated. But, if the computer checks the opponent who was also defeated it's possible for our code to say we won while a more accurate assessment might call the contest a draw! 
+The same is true for the order of checking for a defeated hero. If we check the opponent first, we may have been defeated. But, if the computer checks the opponent who was also defeated it's possible for our code to say we won while a more accurate assessment might call the contest a draw!
 
-Try and solve this. Calculate the damage first. Apply attacks each hero. Then check form your code to present the following outcomes: 
+Try and solve this. Calculate the damage first. Apply attacks each hero. Then check form your code to present the following outcomes:
 
 - self hero wins
 - opponent wins

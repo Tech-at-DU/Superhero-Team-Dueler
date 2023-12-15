@@ -7,9 +7,9 @@ Superheroes should be team players, so let's create a team class that can manage
 Here's an overview of some of the methods we'll need.
 
 1. `__init__`: Parameters: name: String
-1. `add_hero`: Parameters: hero:String
-1. `remove_hero`: Parameters name: String
-1. `view_all_heroes`: Parameters: None
+2. `add_hero`: Parameters: hero: String
+3. `remove_hero`: Parameters name: String
+4. `view_all_heroes`: Parameters: None
 
 You'll need to use methods that exist in the built-in Python list (`self.heroes`) to add and remove heroes to the team. This code is going to be very similar to the code that you wrote in Rainbow Checklist except that instead of adding strings to our list, we want to add `Hero` objects.
 
@@ -25,20 +25,20 @@ In a similar manner, your `Hero` has a list of abilities and armors. This does n
 
 > This concept is known as **Aggregation** in OOP. Another way to think about it is that inheritance vs aggregation is "is a" vs. "has a".
 >
->For example, a `Weapon` "is a(n)" `Ability`, whereas a `Team` "has a" list of `Hero` objects
+> For example, a `Weapon` "is a(n)" `Ability`, whereas a `Team` "has a" list of `Hero` objects
 
 # Build the Constructor
 
 Build the constructor for the Team class:
 
-```py
+```python
 class Team:
   def __init__(self, name):
     ''' Initialize your team with its team name and an empty list of heroes
     '''
     self.name = name
     self.heroes = list()
-````
+```
 
 # Remove a Hero from the Team
 
@@ -100,7 +100,7 @@ def add_hero(self, hero)
 
 Previously we've used user stories to visualize what our finished application should look like before we began to build it. Here instead of user stories we'll use automated tests in much the same way.
 
-Test Driven Development (commonly abbreviated as **TDD**) is another way of imagining the end result before you dive into coding. However, instead of writing narratives, with TDD we actually write *code* that verifies the behavior we want our program to perform before we even write the program.
+Test Driven Development (commonly abbreviated as **TDD**) is another way of imagining the end result before you dive into coding. However, instead of writing narratives, with TDD we actually write _code_ that verifies the behavior we want our program to perform before we even write the program.
 
 By writing the test first you focus on functionality first instead of implementation. In the spirit of TDD, we wrote some tests already for you to use, which your class methods must pass.
 
@@ -163,6 +163,7 @@ For additional `pytest` options see their documentation [here](https://docs.pyte
 Make sure all the tests in the `hero_test.py` file pass.
 
 ## A Note About Python 2 vs Python 3
+
 One of the exciting features about python3 is that it supports unicode! This is great but it can cause compatibility issues when running python2.
 
 If you receive an error saying that there's a unicode error you'll need to force pytest to use python3 this way.

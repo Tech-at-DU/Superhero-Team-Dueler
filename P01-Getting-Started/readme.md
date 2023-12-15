@@ -10,12 +10,12 @@ Before we get started, it's important to know how we will build out this file:
 
 Here is an overview of what you will build in this chapter:
 
-* Hero Class
+- Hero Class
   1. `__init__`: Parameters: name:String, starting_health:Int (default value: 100)
-  2. `fight`: Parameters: opponent: Hero Class  
-
+  2. `fight`: Parameters: opponent: Hero Class
 
 # Build out the Hero Class
+
 Here we define what we want our `Hero` class to look like. Each hero will need attributes such as starting and current health. Let's set these as some starting value when we create each Hero in memory.
 
 Let's walk through each method and smoke test them as we go.
@@ -67,7 +67,7 @@ Grace Hopper
 
 Note that we can still provide a value for `starting_health` which replaces the default value of 100 that we gave in the `__init__` method! If when we instantiated our hero with only a name: `Hero("Grace Hopper")`, then their `current_health` would've been 100!
 
-**NOTE!** The code above is inside the `if __name__ == "__main__":` block. This block will only run if this script is called directly. The if/code block here prevents this block from being run when this script is imported by anotther script. 
+**NOTE!** The code above is inside the `if __name__ == "__main__":` block. This block will only run if this script is called directly. The if/code block here prevents this block from being run when this script is imported by another script.
 
 Why? This allows us to test the code here by running: `python3 hero.py`. Later we want to import the `Hero` class but we won't want to run this test code.
 
@@ -95,13 +95,13 @@ def fight(self, opponent):
   # Hint: Look into random library, more specifically the choice method
 ```
 
-Import random: `import random` at the top of your script and use one of the random methods to generate a random number. For example: `random.randomint(0,1)` would return a number between 0 and 1. 
+Import random: `import random` at the top of your script and use one of the random methods to generate a random number. For example: `random.randint(0,1)` would return a number between 0 and 1.
 
-Print the name of the victor. It should either be the hero instance or the opponent instance. Print a message something like: 
+Print the name of the victor. It should either be the hero instance or the opponent instance. Print a message something like:
 
 `Wonder Woman Wins!` or `Dumbledore Wins!`
 
-**Stretch Goal:** Make the message fancy! Print something like: 
+**Stretch Goal:** Make the message fancy! Print something like:
 
 `Wonder Woman defeats Dumbledore!` or `Dumbledore defeats Wonder Woman!`
 
@@ -125,13 +125,13 @@ You should see an output similar to:
 Wonder Woman won!
 ```
 
-Test your code a few times. You should get a different results. Test enough to make sure both heros win at some point. You'll have to test a few times because contest is random it's possible for a hero to win a few times in a row! 
+Test your code a few times. You should get a different results. Test enough to make sure both heroes win at some point. You'll have to test a few times because contest is random it's possible for a hero to win a few times in a row!
 
 Since we randomly chose a winner, either hero has an equal likelihood to win. In later chapters, we'll add armor and abilities to the heroes to make the battle much more interesting!
 
-**Stretch Goal:** consider the hero's power when deciding a winner! There are a few ways you can handle this. Here is one possible solution. Add the two powers together. Then divide power of a hero by the total. This should give you a decimal percent chance that hero should win the contest. 
+**Stretch Goal:** consider the hero's power when deciding a winner! There are a few ways you can handle this. Here is one possible solution. Add the two powers together. Then divide power of a hero by the total. This should give you a decimal percent chance that hero should win the contest.
 
-For example: 
+For example:
 
 ```python
 hero1 = Hero("Wonder Woman", 300)
@@ -146,7 +146,7 @@ Dumbledore's chance of winning is: 250 / 550 = 0.45 or 45%
 
 # Commit
 
-Commit your changes to GitHub. Feel free to use a custom message of your own, as long as it accuratley describes what you did.
+Commit your changes to GitHub. Feel free to use a custom message of your own, as long as it accurately describes what you did.
 
 ```bash
 $ git add . && git commit -m "created hero class" && git push
