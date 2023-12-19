@@ -8,14 +8,15 @@
 
 There are times when the powers of good and evil come together in a mighty clash of force. When this happens, it's up to all of us to make sure that we make every one of our assets count. What better than a simulation to make sure you have the best team with you when the time comes to stand up to the evil forces of the galaxy's greatest foes.
 
-Our task is to create a superhero team dueling application so we can be sure we've got the best people to fight evil with. This time we're going to use **Object Oriented Programming** to build our applications instead of relying completely on functions.
+Our task is to create a superhero team dueling application so we can be sure we've got the best people to fight evil with. This time, we're going to use **Object Oriented Programming** to build our applications instead of relying completely on functions.
 
 ## Learning Outcomes
+
 By the end of this tutorial, you should be able to...
 
-1. Use an Object Oriented Programming pattern to manage a more complex piece of software
-1. Define classes and instances of classes
-1. Use inheritance and polymorphism to define superclasses and subclasses
+1. Use an Object Oriented Programming pattern to manage a more complex piece of software.
+2. Define classes and instances of classes.
+3. Use inheritance and polymorphism to define superclasses and subclasses.
 
 # Taking a Step Back: Dogs
 
@@ -27,15 +28,15 @@ But wait, you might be thinking, how does a dog help us with programming?
 
 ## Properties and Methods
 
-We've seen and used objects in Python already. A Python list for example is an object that we've already encountered. Objects hold variables (called **properties**) and functions (called **methods**).
+We've seen and used objects in Python already. A Python list, for example, is an object that we've already encountered. Objects hold variables (called **properties**) and functions (called **methods**).
 
-Object oriented programming seeks to represent code similarly to the way you think of objects in the real world by describing the features (properties) - such as eye color, or breed - and actions (methods) - such as bark and eat - that are associated with the object.
+Object Oriented programming seeks to represent code similarly to the way you think of objects in the real world by describing the features (properties) - such as eye color or breed - and actions (methods) - such as bark and eat - that are associated with the object.
 
 ## Classes
 
-Before we can build an object however we need to create a **class** -- or the blueprint from which that object is constructed by the computer. A **class** is like a set of instructions that tells the computer how to create your object in memory. A class _describes_ the methods (functions) and properties (variables) that will exist in an object when it's created.
+Before we can build an object, however, we need to create a **class** - or the blueprint from which that object is constructed by the computer. A **class** is like a set of instructions that tells the computer how to create your object in memory. A class _describes_ the methods (functions) and properties (variables) that will exist in an object when it's created.
 
-The `class` allows many objects to be created from a single definition just as a factory can produce many cars from a single set of designs. At the same time each object can store unique values associated with it just as each car from a factory can have different options (for example, its color, number of doors, and other features).
+The `class` allows many objects to be created from a single definition, just as a factory can produce many cars from a single set of designs. At the same time, each object can store unique values associated with it, just as each car from a factory can have different options (for example, its color, number of doors, and other features).
 
 ## Instantiation
 
@@ -43,11 +44,11 @@ When we create an object of a class in memory, this is called **instantiation**.
 
 # Getting Started
 
-We'll start off we start any project by 
+We'll start off any project by
 
 1. Making a new directory
-2. Adding a Python virtual enviornment
-3. Initializing a git and GitHub repos
+2. Adding a Python virtual environment
+3. Initializing a git and GitHub repository
 
 Start by making a directory
 
@@ -55,24 +56,24 @@ Start by making a directory
 $ mkdir superheroes-dueler
 ```
 
-Next, setup your Virtual Environment.
+## Next, Set Up Your Virtual Environment
 
-If you haven't setup a virtual environment before, make sure install it with the command `python3 -m pip install --user virtualenv`
+If you haven't set up a virtual environment before, make sure to install it with the command `python3 -m pip install --user virtualenv`.
 
-Otherwise, make sure you are in the main directory of the project and run the following to create your virtualenv:
+Otherwise, make sure you are in the main directory of the project and run the following to create your virtual environment:
 
 ```bash
 $ python3 -m venv env
 $ source env/bin/activate
 ```
 
-Remember to install your requirements if there is a `requirements.txt` file present
+Remember to install your requirements if there is a `requirements.txt` file present.
 
 ```bash
 $ pip3 install -r requirements.txt
 ```
 
-We can also setup our GitHub repository before we go any futher.
+We can also set up our GitHub repository before we go any further.
 
 Run the following commands in the main project directory and then follow the interactive prompts:
 
@@ -81,15 +82,15 @@ $ git init -b main
 $ gh repo create superheroes-dueler
 ```
 
-Ok! Now we are ready to start making a little code.
+Ok! Now we are ready to start writing some code.
 
 # Make a Dog Class
 
 Let's make a simple class called `Dog`.
 
-Make the file `dog.py`
+Make the file `dog.py`:
 
-```$ touch dog.py```
+`$ touch dog.py`
 
 Now define a class using the `class` keyword in Python, and we're going to add one **property** to the Dog class called `name`:
 
@@ -103,15 +104,15 @@ class Dog:
 
 Hang on, what's that `__init__` method? And what does `self` refer to? Let's take a brief moment to discuss both of these:
 
-## init
-This is a required method that every class must have. **`__init__` describes how to create an object based on the blueprint provided by the class**. It's a special method called a **constructor**, _which runs whenever a new instance of the class is created._ We mainly use it to assign values to our properties. In this case, we take the value of `name` and assign it to `self.name` so that we can reference it for that object. But what does `self` mean?
+## Initialization (**init** method)
 
-## self
+This is a required method that every class must have. **`__init__` describes how to create an object based on the blueprint provided by the class.** It's a special method called a constructor, which runs whenever a new instance of the class is created. We mainly use it to assign values to our properties. In this case, we take the value of `name` and assign it to `self.name` so that we can reference it for that object. But what does `self` mean?
 
-self is a keyword used in classes to refer to the specific object built from the class. If we created 100 dog objects, how does each dog know what the values of its own properties are? Is it a golden retriever, or a poodle? Does it have brown eyes or blue? **The `self` keyword allows an object to keep track of its own properties, separate from any other object of the same class.** It is also a _required_ property to every method within a class, so make sure to **always have it as the first property to any method in a class that you create.**
+## Self
+
+`self` is a keyword used in classes to refer to the specific object built from the class. If we created 100 dog objects, how does each dog know what the values of its own properties are? Is it a Golden Retriever, or a Poodle? Does it have brown eyes or blue? **The `self` keyword allows an object to keep track of its own properties, separate from any other object of the same class.** It is also a required property for every method within a class, so make sure to **always have it as the first property in any method in a class that you create.**
 
 > Python will implicitly pass `self` as the first argument to any method call, so you don't need to explicitly state it!
-
 
 # Make an Instance of the Dog Class
 
@@ -136,10 +137,9 @@ Dog("Rex")
 
 Now that we've defined the Class and then instantiated an instance of it we can run the whole file to see the print statements.
 
-
 Run the `dog.py` file
 
-```$ python3 dog.py```
+`$ python3 dog.py`
 
 What do you see?
 
@@ -151,6 +151,7 @@ This will print:
 ```bash
 dog initialized!
 ```
+
 </details>
 
 Awesome! Our dog has been initialized, but how do we do anything with it? How do we access its name? In order to do this, **we have to save our instance to a variable!**
@@ -228,7 +229,7 @@ my_dog = Dog("Rex", "SuperDog")
 print(my_dog.breed)
 ```
 
-> **Watch Out** - if you add a property upon initialization, it is REQUIRED and you will get an error if you don't provide a value for it during initialization. So only put required properties into __init__. See an example of this error below when we don't provide a "breed" value:
+> **Watch Out** - if you add a property upon initialization, it is REQUIRED and you will get an error if you don't provide a value for it during initialization. So only put required properties into **init**. See an example of this error below when we don't provide a "breed" value:
 
 ```
 Traceback (most recent call last):
@@ -267,19 +268,17 @@ my_dog = Dog("Rex", "SuperDog")
 my_dog.bark()
 ```
 
-Our `Dog` class has a method called `bark` that when called will print out `Woof!` to the terminal. The syntax is similar to the syntax that we've already seen when building functions but, there are some key differences.
-
+Our `Dog` class has a method called `bark` that when called will print out `Woof!` to the terminal. The syntax is similar to the syntax that we've already seen when building functions but there are some key differences.
 
 Run the `dog.py` file
 
-```$ python3 dog.py```
+`$ python3 dog.py`
 
 What do you see?
 
-The `bark()` method is nested within in a class definition: `class Dog:`. This defines the `bark()` method as a member of the `Dog` class.
+The `bark()` method is nested within a class definition: `class Dog:`. This defines the `bark()` method as a member of the `Dog` class.
 
-We can't call this method on the class. We can't call `Dog.bark()` and expect something to happen. That would be like asking the blueprint of a dog to bark. That does't make sense! Instead we need to make an **Instance** of the `Dog` class and then ask that instance to bark. That is why methods defined in this way are called **Instance Methods**.
-
+We can't call this method on the class. We can't call `Dog.bark()` and expect something to happen. That would be like asking the blueprint of a dog to bark. That doesn't make sense! Instead we need to make an **Instance** of the `Dog` class and then ask that instance to bark. That is why methods defined in this way are called **Instance Methods**.
 
 > Remember classes are groups of data and actions, data attached to classes are key-value pairs called **Properties**, and the actions that class can take are called **Methods**.
 
@@ -289,7 +288,7 @@ So far most code you've written is probably **Procedural** meaning it is written
 
 When software becomes very complex, procedural programming can become too cumbersome. As a solution to this complexity, software engineers looked for logical and intuitive ways to **group together various data and actions**. There are multiple ways to accomplish this, but the most popular is **Object Oriented Programming** or **OOP**, which you will encounter again and again in your career as a software engineer.
 
-So far we've learned how to use functions to create code that is re-usable and maintainable. We also have already benefitted from some of the power that objects give us but haven't explored the depths that are available to us.
+So far we've learned how to use functions to create code that is reusable and maintainable. We also have already benefited from some of the power that objects give us but haven't explored the depths that are available to us.
 
 # Importing Your Class Module
 
@@ -297,7 +296,7 @@ Well crafted code should always be modular, meaning each of its reusable parts i
 
 Classes are very modular, since you can write a class in one file, and then use it elsewhere using the Python keyword `import`. Let's make our code modular and separate the class code from the code that instantiates a dog and calls its methods.
 
-Let's import the Dog class into a new file were we'll make some instances of Dog.
+Let's import the Dog class into a new file where we'll make some instances of Dog.
 
 Make a new file called `my_dogs.py`. Inside there write the following code:
 
@@ -348,14 +347,13 @@ Try to clean this code up — try to "refactor" it.
 
 <!-- -->
 
-
 > You just **Refactored** your code. That means that you changed the way it was written to be cleaner and more modular, but it is functionally equivalent to before. Great work!
 
 ## A Note on Scope and Encapsulation
 
 Many languages allow you to enforce access restrictions to various properties and methods of your object in memory. This allows the developer to prevent people from trying to access areas of memory that shouldn't be accessed or edited arbitrarily.
 
-Scope and encapsulation can be thought as useful features that allow us to compartmentalize code instead of providing a measure of security.
+Scope and encapsulation can be thought of as useful features that allow us to compartmentalize code instead of providing a measure of security.
 
 ```python
 def greeting():
@@ -420,11 +418,11 @@ After just this step you can do some awesome stuff with classes and their instan
 
 You can...
 
-* Define a class
-* Define a class's properties
-* Use an `__init__` **constructor** to specify the required properties of a class instance
-* Define a class's methods
-* Import a python module into any file
+- Define a class
+- Define a class's properties
+- Use an `__init__` **constructor** to specify the required properties of a class instance
+- Define a class's methods
+- Import a python module into any file
 
 Great work! Let's make this superhero dueler!
 
@@ -438,13 +436,13 @@ You like dogs! Try these challenges:
 1. Write two new methods to have the dogs sit and roll over (just print "<<DOG'S NAME>> sits", "<<DOG'S NAME>> rolls over").
 1. Have one dog bark, one sit, and one roll over.
 
-Notice how each dog displays it's unique name when you print its name property. Do you remember why this is?
+Notice how each dog displays its unique name when you print its name property. Do you remember why this is?
 
 Notice how each dog makes the same sound "Woof!" when it barks. Why is this?
 
 # Commit
 
-Commit your changes to GitHub. Feel free to use a custom message of your own, as long as it accuratley describes what you did.
+Commit your changes to GitHub. Feel free to use a custom message of your own, as long as it accurately describes what you did.
 
 ```bash
 $ git add . && git commit -m "created dog class" && git push

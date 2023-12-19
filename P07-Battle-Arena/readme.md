@@ -8,9 +8,9 @@ Let's build out the last phase of our superhero team dueler project!
 
 # Creating the Battle Arena
 
-Our heroes need somewhere to battle. let's have our user create our heroes with all of their respective gear and abilities. Our arena will take care of creating heroes and adding them to their respective teams.
+Our heroes need somewhere to battle. Let's have our user create our heroes with all of their respective gear and abilities. Our arena will take care of creating heroes and adding them to their respective teams.
 
-Let's create some methods in an Arena class that  will allow for code reuse. Use your favorite loops with the `input()` function to build teams based on user input.
+Let's create some methods in an `Arena` class that will allow for code reuse. Use your favorite loops with the `input()` function to build teams based on user input.
 
 In your project directory, create a new file named `arena.py` to contain the arena class
 
@@ -101,7 +101,7 @@ Create this method that will allow users to create heroes for their arena. One o
 
 Build the `create_hero` function for your Arena class
 
-```py
+```python
   def create_hero(self):
     '''Prompt user for Hero information
       return Hero with values from user input.
@@ -127,7 +127,7 @@ Build the `create_hero` function for your Arena class
 
 Build the `build_team_one` and `build_team_two` functions for your Arena class
 
-```py
+```python
   # build_team_one is provided to you
   def build_team_one(self):
     '''Prompt the user to build team_one '''
@@ -160,7 +160,7 @@ Build the `team_battle` function for your Arena class
 
 **HINT:** Attack is a method of the Team class
 
-```py
+```python
   def team_battle(self):
     '''Battle team_one and team_two together.'''
     # TODO: This method should battle the teams together.
@@ -170,11 +170,12 @@ Build the `team_battle` function for your Arena class
 ```
 
 # Get Battle Stats
+
 You may want to get statistics on how your battle went. Let's build that out now!
 
 Build the `show_stats` function for your Arena class. We've built it out for Team One, you'll need to build it for Team Two!
 
-```py
+```python
   def show_stats(self):
     '''Prints team statistics to terminal.'''
     # TODO: This method should print out battle statistics
@@ -255,10 +256,10 @@ Our program right now has the parts and pieces to run once before it exits. This
 
 A typical game loop will do a few things over and over again:
 
-* check for user input
-* check length of time between loops
-* update the game state
-* render output to screen
+- check for user input
+- check length of time between loops
+- update the game state
+- render output to screen
 
 Our terminal game isn't really your typical game so our game loop will be a bit different.
 
@@ -299,17 +300,17 @@ if __name__ == "__main__":
 
 ## Stretch Challenges
 
-* Add a command line interface that allows for recreating or editing  of teams.
-* Allow use of only "authorized" abilites, weapons, and armor controlled by the Arena.
-* Add tests that cover more edge cases.
-* Change the way health is dealt out across the team. i.e. create heroes that may take damage first or may take more of the team's damage.
-* Write additional classes that implement different ways to attack or defend -- i.e. create a relic class that only defends against abilities.
-* Develop a way to steal weapons and abilities from the opposing team.
-* Add rewards for team success such as weapon drops.
+- Add a command line interface that allows for recreating or editing of teams.
+- Allow use of only "authorized" abilites, weapons, and armor controlled by the Arena.
+- Add tests that cover more edge cases.
+- Change the way health is dealt out across the team. i.e. create heroes that may take damage first or may take more of the team's damage.
+- Write additional classes that implement different ways to attack or defend -- i.e. create a relic class that only defends against abilities.
+- Develop a way to steal weapons and abilities from the opposing team.
+- Add rewards for team success such as weapon drops.
 
 # Commit
 
-Commit your changes to GitHub. Feel free to use a custom message of your own, as long as it accuratley describes what you did.
+Commit your changes to GitHub. Feel free to use a custom message of your own, as long as it accurately describes what you did.
 
 ```bash
 $ git add . && git commit -m "Added battle arena" && git push

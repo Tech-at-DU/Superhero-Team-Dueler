@@ -8,13 +8,13 @@ Here is a simple demonstration of inheritance at work.
 class Animal:
   def __init__(self, name, sleep_duration):
     self.name = name
-    self.sleep_time = sleep_time
+    self.sleep_duration = sleep_duration
 
   def sleep(self):
-    print(f"{self.name} sleeps for hours {self.sleep_time}")
+    print(f"{self.name} sleeps for hours {self.sleep_duration}")
 ```
 
-let's say we have the above `Animal` class. We can instantiate a new animal object the same way we've already seen it done.
+Let's say we have the above `Animal` class. We can instantiate a new animal object the same way we've already seen it done.
 
 ```python
 dog = Animal("Sophie", 12)
@@ -31,7 +31,7 @@ Our dog here is simply an instance of our `Animal` class, but what if we want sp
 
 We don't want to put a bark method in `Animal` because not every animal barks. We also don't want to have to duplicate every method that dogs and animals have in common.
 
-let's use inheritance to make a `Dog` class that allows us to bark.
+Let's use inheritance to make a `Dog` class that allows us to bark.
 
 ```python
 class Animal:
@@ -40,7 +40,7 @@ class Animal:
     self.sleep_duration = sleep_duration
 
   def sleep(self):
-    print(f"{self.name} sleeps for hours {self.sleep_time}")
+    print(f"{self.name} sleeps for hours {self.sleep_duration}")
 
 # Note that the class Dog takes in Animal as a parameter!
 class Dog(Animal):
@@ -76,6 +76,7 @@ Create the file `animal.py` file
 ```bash
 $ touch animal.py
 ```
+
 Create a `class` named `Animal` which has the methods `eat` and `drink` as well as the property `name`.
 
 The eat method should print the animal's name and "is eating"
@@ -92,7 +93,7 @@ Once you've tried it, check your code against the provided solution below:
 <summary>Solution</summary>
 <br>
 
-```py
+```python
 #animal.py
 class Animal:
   def __init__(self, name):
@@ -110,7 +111,6 @@ class Frog(Animal):
 ```
 
 </details>
-
 
 Let's use what we learned here to give our superheroes more options for attacking.
 
@@ -140,7 +140,7 @@ class Weapon(Ability):
     """  This method returns a random value
     between one half to the full attack power of the weapon.
     """
-    # TODO: Use integer division to find half of the max_damage value
+    # TODO: In the attack method, use integer division to find half of the max_damage value
     # then return a random integer between half of max_damage and max_damage
     pass
 ```
@@ -157,7 +157,7 @@ Add the following to the Hero class:
 from weapon import Weapon
 
 class Hero:
-  # The code you have already written should be here.  
+  # The code you have already written should be here.
   # Add the following method to your hero class...
 
   def add_weapon(self, weapon):
@@ -190,29 +190,29 @@ Congrats, you've re-defined a method that already exists in our inherited `Abili
 
 This is called **method overriding** and it is a form of **Polymorphism. It allows you to specify a different functionality for methods that are inherited from the superclass.** When we call `attack()` on our `Weapon` object it will run the `attack` method specified in the `Weapon` class and not the one in `Ability`.
 
-What is polymorphism doing in practicale terms? In this case we have two classes that are similar but act differently. And one we can replace one with another in software without any problems. Let's look at why. 
+What is polymorphism doing in practicale terms? In this case we have two classes that are similar but act differently. And one we can replace one with another in software without any problems. Let's look at why.
 
-First lets look at the word: 
+First lets look at the word:
 
-> Polymorphism is a greek word meaning: to have multiple forms. 
+> Polymorphism is a greek word meaning: to have multiple forms.
 > Poly means multiple
 > and morph means to change form
 
-We often write code that works with one type of thing. Integers, Floats, Strings for example. Sometimes we run into situations where we have multiple different kinds of things but we want to work with all these different things without having to write a new system! 
+We often write code that works with one type of thing. Integers, Floats, Strings for example. Sometimes we run into situations where we have multiple different kinds of things but we want to work with all these different things without having to write a new system!
 
-`Ability` stores an attribute called `max_damage`.  Since `Weapon` extends `Ability` we can use `Weapon` anywhere our code requires an object with a `max_damage` attribute because `Weapon` will inherit `max_damage`. 
+`Ability` stores an attribute called `max_damage`. Since `Weapon` extends `Ability` we can use `Weapon` anywhere our code requires an object with a `max_damage` attribute because `Weapon` will inherit `max_damage`.
 
-When we use an ability we call it's attack method. Both `Ability` and `Weapon` implement an attack method. Any code that receives an Object and tries to invoke that object's attack method can work with either an `Ability` or a `Weapon`. 
+When we use an ability we call it's attack method. Both `Ability` and `Weapon` implement an attack method. Any code that receives an Object and tries to invoke that object's attack method can work with either an `Ability` or a `Weapon`.
 
 `Ability` and `Weapon` are both different. When invoking an attack with a weapon the amount of damage returned will be a higher number. So internally the `Ability` and `Weapon` work differently but externally they look the same!
 
-Let's look at that idea with some code: 
+Let's look at that idea with some code:
 
 ```python
 # define an ability and a weapon
 # both have the same max damage
 eye_rays = Ability('Eye Rays', 50)
-laser_blast = Weapn('Laser Blast', 50)
+laser_blast = Weapon('Laser Blast', 50)
 
 # Let's put these in an array together
 # This list contains different types: Ability and Weapon
@@ -226,26 +226,26 @@ for power in powers:
 for power in powers:
   print(power.attack())
 
-# Note! While both implement attack() a Weapon will always return 
+# Note! While both implement attack() a Weapon will always return
 # a higher average damage!
 ```
 
-Form the code sample above we can see that we have a list of different types but our code here can treat them the same. This is polymorphism. 
+Form the code sample above we can see that we have a list of different types but our code here can treat them the same. This is polymorphism.
 
-Where would this not work? 
+Where would this not work?
 
 ```python
 # imagine we have a list of strings and ints
 stuff = [1, 4, 'two', 3, 'five']
 
 # we can loop over these elements but we can't
-# use the capitalize() method on integers! 
-for thing in stuff: 
+# use the capitalize() method on integers!
+for thing in stuff:
   print(thing.capitalize()) # Error
 
 ```
 
-In this second example you can see that an integer can't be used where our code expects a string! Int and String are not polymorphic! 
+In this second example you can see that an integer can't be used where our code expects a string! Int and String are not polymorphic!
 
 # Commit
 

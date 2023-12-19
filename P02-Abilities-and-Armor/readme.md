@@ -8,25 +8,25 @@ In this chapter we are going to make classes for Armor and Abilities so each of 
 
 Here is an overview of what you will build in this chapter:
 
-* Ability Class
+- Ability Class
+
   1. `__init__`: Parameters: name: String, max_damage: Integer
   2. `attack`: No Parameters
 
-* Armor Class
+- Armor Class
   1. `__init__`: Parameters: name: String, max_block: Integer
   2. `block`: Parameters: None
 
 After we implemented the above classes, we are going to expand our Hero class so that it is able to use the armor and abilities classes to make our heroes stronger! To do so, we will adjust the hero class to have the following design:
 
-* Hero Class
-  1. `__init__`: Parameters: name:String, starting_health:Int (default value: 100)
-  2. `add_ability`: Parameters: ability:Ability Object
-  3. `attack`:  No Parameters
+- Hero Class
+  1. `__init__`: Parameters: name: String, starting_health:Int (default value: 100)
+  2. `add_ability`: Parameters: ability: Ability Object
+  3. `attack`: No Parameters
   4. `defend`: incoming_damage: Integer
   5. `take_damage`: Parameters: damage
   6. `is_alive`: No Parameters
-  7. `fight`: Parameters: opponent: Hero Class  
-
+  7. `fight`: Parameters: opponent: Hero Class
 
 # Every Hero Needs an Ability
 
@@ -126,13 +126,13 @@ But your values may be different since we're using a random number generator. Be
 
 In your project directory make a file named `armor.py` and place the Armor class inside of it
 
-**HINT:** You would write this in a similar way you  wrote the `Ability` class
+**HINT:** You would write this in a similar way you wrote the `Ability` class
 
 You can't go into battle unprepared. We need to give our heroes armor that they can use to defend themselves.
 
 Create a new class called `Armor` that contains two methods: `__init__` and `block`.
 
-**HINT:** You would write this in a similar way you  wrote the `__init__` and `attack` methods for the `Ability` class
+**HINT:** You would write this in a similar way you wrote the `__init__` and `attack` methods for the `Ability` class
 
 The block method should return an integer between 0 and the max_block strength.
 
