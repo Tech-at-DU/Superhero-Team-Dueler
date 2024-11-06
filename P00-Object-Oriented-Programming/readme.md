@@ -63,7 +63,7 @@ If you haven't set up a virtual environment before, make sure to install it with
 Otherwise, make sure you are in the main directory of the project and run the following to create your virtual environment:
 
 ```bash
-$ python3 -m venv env
+$ python3 -m venv venv
 $ source env/bin/activate
 ```
 
