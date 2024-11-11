@@ -17,4 +17,4 @@ Read and complete these chapters in order.
 1. [Adding More to Our Heroes](P03-Adding-To-Our-Heroes/)
 1. [Intro to Inheritance](P04-Inheritance/)
 1. [Team Attack and Defense](P05-Team-Attack-And-Defense/)
-1. [Battle Arena](P06-Battle-Arena/)
+<!-- 1. [Battle Arena](P06-Battle-Arena/) -->
