@@ -70,7 +70,7 @@ $ source env/bin/activate
 Remember to install your requirements if there is a `requirements.txt` file present.
 
 ```bash
-$ pip3 install -r requirements.txt
+$ pip install -r requirements.txt
 ```
 
 We can also set up our GitHub repository before we go any further.
